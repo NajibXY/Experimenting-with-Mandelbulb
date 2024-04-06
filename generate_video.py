@@ -20,13 +20,12 @@ def plot_density(iteration, datafolder, distance_file, light_file):
 
     # Figure
     fig = plt.figure(frameon=False)
-    np.random.seed(0)  # Add a seed value to the random generator
     fig.set_size_inches(xratio, yratio)
     ax = plt.Axes(fig, [0.0, 0.0, 1.0, 1.0], )
     ax.set_axis_off()
     fig.add_axes(ax)
     # Plot distance data
-    cmap = pltcolors.ListedColormap(np.random.seed(iteration).default_rng().random((256, 3)))
+    cmap = pltcolors.ListedColormap ( np.random.rand ( 256,3))
     plt.imshow(data_distance, origin='lower', extent=[0, xratio, 0, yratio], cmap=cmap)
     # Save figure
     plt.savefig('images/distance_'+str(iteration).zfill(3)+'.png', dpi=300)
@@ -35,7 +34,7 @@ def plot_density(iteration, datafolder, distance_file, light_file):
     # Save figure
     plt.savefig('images/light_'+str(iteration).zfill(3)+'.png', dpi=300)
     # Plot merged data
-    plt.imshow(data, origin='lower', extent=[0, xratio, 0, yratio], cmap=cmap)
+    plt.imshow(data, origin='lower', extent=[0, xratio, 0, yratio], cmap='Purples')
     plt.savefig('images/mandelbulb_'+str(iteration).zfill(3)+'.png', dpi=300)
     # Close figure
     plt.close()
