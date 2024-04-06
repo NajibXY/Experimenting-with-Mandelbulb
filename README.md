@@ -10,7 +10,7 @@
 </figure>
 
 Who doesn't love fractals ? </br>
-As an exercice to learn more about the maths behind generating and rendering fractals. I worked on this example of Mandelbulb generation. Mandelbulb is a 3D fractal emerging from the experimentations to find a 3D canonical Mandelbrot set.
+As an exercise to learn more about the maths behind generating and rendering fractals. I worked on this example of Mandelbulb generation. Mandelbulb is a 3D fractal emerging from the experimentations to find a 3D canonical Mandelbrot set.
 <p align="center">
   <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Mandel_zoom_00_mandelbrot_set.jpg" width="200">
   </br>
@@ -37,7 +37,7 @@ As an exercice to learn more about the maths behind generating and rendering fra
 - But in order to be able to render the data, a ray marching method has been implemented, that involves lights and distances calculation according to the movement of a virtual camera. This requires to do some parallelization with OpenMP and a lot of three-dimensional vector algebra to achieve an acceptable execution time.
 - It takes about 30 minutes to generate the data with a base exponent equal to 8.
 
-### Compilating the generate_data.cpp file
+### Compiling the generate_data.cpp file
 
 - Requires C++ and gcc/g++ installed.
 - Just run :
@@ -50,16 +50,16 @@ As an exercice to learn more about the maths behind generating and rendering fra
 
 - You'll need to set up a Python environment (in my case conda), to display the generated data with Matplotlib.
 - For installing the requirements with conda you can just run :
-  > conda create --name <env> --file <this file>
+  > conda create --name `<your_env_name>` --file requirements.txt
 - Or if you are using pip :
-  > pip install -r requirements.txt if you use pip
+  > pip install -r requirements.txt
 - Then you will be able to run the script.
 
 ### Run the python script
 
 > python .\generate_video.py
-- This will provide you with all the rendered PNGs of the data previously generated. Those are saved in the /images/ folder.
-- After generating the images, the script also generates a video using FFMPEG which consists of the compilation of the results and stores it in the same folder as the script.
+- This will generate all the rendered PNGs from the previously generated data. These images are saved in the /images/ folder.
+- Additionally, the script compiles these images into a video using FFMPEG and saves it in the same folder as the script.
 </br>
 
 ### Examples of generated images and video 
@@ -80,9 +80,9 @@ As an exercice to learn more about the maths behind generating and rendering fra
 
 ## 5. Possible Improvements
 
-- Faster data generation
-- Using other formulas for the data generation
-- Using other methods for rendering
-- Using a C++ efficient library to generate the vizualisation along the data.
-- Being able to tune the generation parameters.
-
+- Faster data generation.
+- Using other formulas for the data generation.
+- Using other methods for rendering.
+- Utilizing an efficient C++ library for visualization alongside the data.
+- Providing the ability to tune generation parameters.
+- [...]
