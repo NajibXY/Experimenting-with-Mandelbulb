@@ -43,10 +43,11 @@ def plot_density(iteration, datafolder, distance_file, light_file):
 if __name__ == '__main__':
     plt.close('all')
     datafolder = './data/'
+    imageFolder = './images/'
 
     # Delete previous images
-    for filename_to_delete in os.listdir(datafolder):
-        file_path_to_delete = os.path.join(datafolder, filename_to_delete)
+    for filename_to_delete in os.listdir(imageFolder):
+        file_path_to_delete = os.path.join(imageFolder, filename_to_delete)
         try:
             if os.path.isfile(file_path_to_delete) or os.path.islink(file_path_to_delete):
                 os.unlink(file_path_to_delete)
