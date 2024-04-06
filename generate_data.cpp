@@ -10,7 +10,7 @@
 #include <filesystem> // file system operations
 
 /* ----------------------------------------
-    Constants
+    Constants, properties and variables
 ---------------------------------------- */
 // Mandelbulb props
 #define MAIN_ITERATIONS 500
@@ -37,7 +37,7 @@ double TARGET_POSITION[3] = {0.0, 0.0, 0.0};
 double UP_VECTOR[3] = {1.0, 0.0, 0.0};
 
 /* ----------------------------------------
-    Function Declarations
+    Functions Declaration
 ---------------------------------------- */
 double magnitude(double vector[]);
 double mandelbulbDE(double rayPosition[]);
@@ -56,8 +56,9 @@ void getNormal(double rayPosition[], double surfaceNormal[]);
 void rotateVectorHorinzontally(double vector[], double angle);
 void rotateVectorVertically(double vector[], double angle);
 double getLight(double rayPosition[]);
+void generateData(int currentIteration);
 /* ----------------------------------------
-    Function Implementations
+    Functions Implementation
 ---------------------------------------- */
 // Magnitude of a vector
 double magnitude(double vector[]) {
@@ -295,6 +296,70 @@ double mandelbulbDE(double rayPosition[]) {
         addVectors(rayPosition, cartesianPosition, tempPosition);
     }
     return 0.5*log(r)* r / dr;
+}
+// Calculate the vizualisation data
+void generateData(int currentIteration) {
+    // Memory allocation according to the resolution
+    double* distanceMatrice = new double[SCREEN_HEIGHT * SCREEN_WIDTH];
+    double* lightMatrice = new double[SCREEN_HEIGHT * SCREEN_WIDTH];
+    std::cout << "\t------ Calculating points for iteration :" << currentIteration << " ------" << std::endl;
+    // Loop through the screen resolution
+    double output[2];
+    for (int y = 0; y < SCREEN_HEIGHT; y++) {
+        for (int x = 0; x < SCREEN_WIDTH; x++) {
+            rayMarching(x, y, output);
+            distanceMatrice[y*SCREEN_WIDTH + x] = output[0];
+            lightMatrice[y*SCREEN_WIDTH + x] = output[1];
+        }
+    }
+    // Save the data to a file
+    std::string strCurrentIteration = std::to_string(currentIteration);
+    // Normalize string to 3 characters
+    strCurrentIteration = std::string(3 - strCurrentIteration.length(), '0') + strCurrentIteration;
+    
+    // Save distance data
+    std::cout << "\t> Saving distance file." << std::endl;
+    std::ofstream distanceFile("data/distance_" + strCurrentIteration + ".txt");
+    if (distanceFile.is_open()) {
+        for (int i = 0; i < SCREEN_WIDTH; i++) {
+            for (int j = 0; j < SCREEN_HEIGHT; j++) {
+                if (j < SCREEN_HEIGHT-1) { 
+                    distanceFile << distanceMatrice[j*SCREEN_WIDTH + i] << ", "; 
+                }
+                else { 
+                    distanceFile << distanceMatrice[j*SCREEN_WIDTH + i] << "\n"; 
+                }
+            }
+        }
+        distanceFile.close();
+    } else {
+        std::cout << "An error occurred writing distance file.\n";
+        throw std::runtime_error("An error occurred writing distance file.\n");
+    }
+
+    // Save light data
+    std::cout << "\t> Saving light file." << std::endl;
+    std::ofstream lightFile("data/light_" + strCurrentIteration + ".txt");
+    if (lightFile.is_open()) {
+        for (int i = 0; i < SCREEN_WIDTH; i++) {
+            for (int j = 0; j < SCREEN_HEIGHT; j++) {
+                if (j < SCREEN_HEIGHT-1) { 
+                    lightFile << lightMatrice[j*SCREEN_WIDTH + i] << ", "; 
+                }
+                else { 
+                    lightFile << lightMatrice[j*SCREEN_WIDTH + i] << "\n"; 
+                }
+            }
+        }
+        lightFile.close();
+    } else {
+        std::cout << "An error occurred writing light file.\n";
+        throw std::runtime_error("An error occurred writing light file.\n");
+    }
+
+    // Clean up memory
+    delete[] distanceMatrice;
+    delete[] lightMatrice;
 }
 
 int main() {
