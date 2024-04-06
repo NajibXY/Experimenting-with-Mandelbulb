@@ -1,1 +1,3 @@
-store/*
+data/*.txt
+images/*.png
+archive/*
