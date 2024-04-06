@@ -6,7 +6,7 @@
 ## 1. Motivations
 
 <figure text-align="right">
-  <img align="right" src="https://github.com/NajibXY/Mandelbulb-with-Ray-marching/blob/master/mandelbulb.gif" width="400">
+  <img align="right" src="https://github.com/NajibXY/Mandelbulb-with-Ray-marching/blob/master/assets/mandelbulb.gif" width="400">
 </figure>
 
 Who doesn't love fractals ? </br>
@@ -68,14 +68,14 @@ As an exercice to learn more about the maths behind generating and rendering fra
 + Example of a generated video :
    </br>
    </br>
-  <img src="https://github.com/NajibXY/Mandelbulb-with-Ray-marching/blob/master/mandelbulb.gif" width="400">
+  <img src="https://github.com/NajibXY/Mandelbulb-with-Ray-marching/blob/master/assets/mandelbulb.gif" width="400">
   </br>
 + Examples of generated & randomly colored images :
   </br>
   </br>
-  <img src="https://github.com/NajibXY/Mandelbulb-with-Ray-marching/blob/master/example1.png" width="350">
+  <img src="https://github.com/NajibXY/Mandelbulb-with-Ray-marching/blob/master/assets/example1.png" width="350">
   </br>
-  <img src="https://github.com/NajibXY/Mandelbulb-with-Ray-marching/blob/master/example2.png" width="350"> 
+  <img src="https://github.com/NajibXY/Mandelbulb-with-Ray-marching/blob/master/assets/example2.png" width="350"> 
 
 </br></br>
 
