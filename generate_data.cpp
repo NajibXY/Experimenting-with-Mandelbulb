@@ -302,7 +302,7 @@ void generateData(int currentIteration) {
     // Memory allocation according to the resolution
     double* distanceMatrice = new double[SCREEN_HEIGHT * SCREEN_WIDTH];
     double* lightMatrice = new double[SCREEN_HEIGHT * SCREEN_WIDTH];
-    std::cout << "\t------ Calculating points for iteration : " << currentIteration << " ------" << std::endl;
+    std::cout << "------ Calculating points for iteration : " << currentIteration << " ------" << std::endl;
     // Loop through the screen resolution
     // Parallelize this loop
     #pragma omp parallel
@@ -390,7 +390,7 @@ int main() {
         generateData(iteration);
         auto stop = std::chrono::high_resolution_clock::now();
         auto duration = std::chrono::duration_cast<std::chrono::seconds>(stop - start);
-        std::cout << "Elapsed time: " << duration.count() << " seconds" << std::endl;
+        std::cout << "> Elapsed time: " << duration.count() << " seconds" << std::endl;
         std::cout << std::endl;
     }
     return 0;
