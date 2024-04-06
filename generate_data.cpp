@@ -12,14 +12,18 @@
 /* ----------------------------------------
     Constants
 ---------------------------------------- */
-
-// Screen
+// Mandelbulb props
+double POWER_VAL = 8.0;
+double TARGET_POSITION[3] = {0.0, 0.0, 0.0};
+// Screen props
 #define SCREEN_RESOLUTION 1000
 #define SCREEN_WIDTH  SCREEN_RESOLUTION
 #define SCREEN_HEIGHT SCREEN_RESOLUTION
-
-// Math
-
+// Math props
+#define PI 3.141592653589793238462643
+// Raymarching props
+#define MAX_STEPS_NUM 100
+#define MAIN_ITERATIONS 500
 
 int main() {
     auto start = std::chrono::high_resolution_clock::now();
@@ -32,9 +36,7 @@ int main() {
     std::cout << "Deleted files in data directory\n\n";
     std::cout << "> Total iterations: " << MAIN_ITERATIONS << std::endl;
     std::filesystem::create_directory("data");
-    for (int iteration = 0; iteration < MAIN_ITERATIONS; ++iteration) {
-        calculateScene(iteration);
-    }
+    //todo
     auto stop = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::seconds>(stop - start);
     std::cout << "Elapsed time: " << duration.count() << " seconds" << std::endl;
