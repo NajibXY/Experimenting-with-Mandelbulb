@@ -1,13 +1,13 @@
-#include <chrono>    // high_resolution_clock
-#include <iostream>  // std::cout
-#include <iomanip>   // setting precision of output strings
-#include <sstream>   // converting numbers to strings streams
-#include <string>    // std::string
-#include <fstream>   // creating string streams
-#include <algorithm> // std::clamp
-#include <stdlib.h>  // srand, rand
-#include <math.h>    // trig functions : sin, cos
-#include <filesystem> // file system operations
+#include <chrono>    
+#include <iostream>  
+#include <iomanip>   
+#include <sstream>   
+#include <string>    
+#include <fstream>   
+#include <algorithm> 
+#include <stdlib.h>  
+#include <math.h>    
+#include <filesystem> 
 
 /* ----------------------------------------
     Constants, properties and variables
