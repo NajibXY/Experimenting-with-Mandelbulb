@@ -304,12 +304,17 @@ void generateData(int currentIteration) {
     double* lightMatrice = new double[SCREEN_HEIGHT * SCREEN_WIDTH];
     std::cout << "\t------ Calculating points for iteration : " << currentIteration << " ------" << std::endl;
     // Loop through the screen resolution
-    double output[2];
-    for (int y = 0; y < SCREEN_HEIGHT; y++) {
-        for (int x = 0; x < SCREEN_WIDTH; x++) {
-            rayMarching(x, y, output);
-            distanceMatrice[y*SCREEN_WIDTH + x] = output[0];
-            lightMatrice[y*SCREEN_WIDTH + x] = output[1];
+    // Parallelize this loop
+    #pragma omp parallel
+    {
+        #pragma omp for
+        for (int y = 0; y < SCREEN_HEIGHT; y++) {
+            for (int x = 0; x < SCREEN_WIDTH; x++) {
+                double output[2];
+                rayMarching(x, y, output);
+                distanceMatrice[y*SCREEN_WIDTH + x] = output[0];
+                lightMatrice[y*SCREEN_WIDTH + x] = output[1];
+            }
         }
     }
     // Save the data to a file
