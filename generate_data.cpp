@@ -362,6 +362,9 @@ void generateData(int currentIteration) {
     delete[] lightMatrice;
 }
 
+/* ----------------------------------------
+    Main Function
+---------------------------------------- */
 int main() {
     auto start = std::chrono::high_resolution_clock::now();
     std::cout << "Raymarching Mandelbulb Fractal..." << std::endl;
@@ -373,9 +376,17 @@ int main() {
     std::cout << "Deleted files in data directory\n\n";
     std::cout << "> Total iterations: " << MAIN_ITERATIONS << std::endl;
     std::filesystem::create_directory("data");
-    //todo
-    auto stop = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::seconds>(stop - start);
-    std::cout << "Elapsed time: " << duration.count() << " seconds" << std::endl;
+    // Loop through the iterations
+    for (int iteration = 0; iteration < MAIN_ITERATIONS; ++iteration) {
+        // Move the camera according to the iteration
+        CAM_HORIZONTAL_ANGLE = (double)iteration*(2.0*PI/(double)MAIN_ITERATIONS);
+        CAM_VERTICAL_ANGLE = deg_2_rad(20.0)*cos(2*CAM_HORIZONTAL_ANGLE);
+        // Generate the data
+        generateData(iteration);
+        auto stop = std::chrono::high_resolution_clock::now();
+        auto duration = std::chrono::duration_cast<std::chrono::seconds>(stop - start);
+        std::cout << "Elapsed time: " << duration.count() << " seconds" << std::endl;
+        std::cout << std::endl;
+    }
     return 0;
 }
