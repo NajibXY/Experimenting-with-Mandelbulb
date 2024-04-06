@@ -302,7 +302,7 @@ void generateData(int currentIteration) {
     // Memory allocation according to the resolution
     double* distanceMatrice = new double[SCREEN_HEIGHT * SCREEN_WIDTH];
     double* lightMatrice = new double[SCREEN_HEIGHT * SCREEN_WIDTH];
-    std::cout << "\t------ Calculating points for iteration :" << currentIteration << " ------" << std::endl;
+    std::cout << "\t------ Calculating points for iteration : " << currentIteration << " ------" << std::endl;
     // Loop through the screen resolution
     double output[2];
     for (int y = 0; y < SCREEN_HEIGHT; y++) {
@@ -367,13 +367,13 @@ void generateData(int currentIteration) {
 ---------------------------------------- */
 int main() {
     auto start = std::chrono::high_resolution_clock::now();
-    std::cout << "Raymarching Mandelbulb Fractal..." << std::endl;
-    std::cout << "\nClearing data directory\n";
+    std::cout << " Raymarching Mandelbulb Fractal..." << std::endl;
+    std::cout << "\n\tClearing data directory\n";
     std::filesystem::path dataDir = "./data";
     for (const auto& entry : std::filesystem::directory_iterator(dataDir)) {
         std::filesystem::remove_all(entry.path());
     }
-    std::cout << "Deleted files in data directory\n\n";
+    std::cout << "\tDeleted files in data directory\n\n";
     std::cout << "> Total iterations: " << MAIN_ITERATIONS << std::endl;
     std::filesystem::create_directory("data");
     // Loop through the iterations
