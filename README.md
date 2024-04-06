@@ -53,14 +53,13 @@ As an exercice to learn more about the maths behind generating and rendering fra
   > conda create --name <env> --file <this file>
 - Or if you are using pip :
   > pip install -r requirements.txt if you use pip
-- Then you will be able to run the 
+- Then you will be able to run the script.
 
 ### Run the python script
 
 > python .\generate_video.py
-</br>
-- This will provide you with all the rendered PNGs of the data previously generated. Those are saved in the /images/ folder
-- After generating the images, the script also generates a video compilating the results using FFMPEG in the same folder as the script.
+- This will provide you with all the rendered PNGs of the data previously generated. Those are saved in the /images/ folder.
+- After generating the images, the script also generates a video using FFMPEG which consists of the compilation of the results and stores it in the same folder as the script.
 </br>
 
 ### Examples of generated images and video 
