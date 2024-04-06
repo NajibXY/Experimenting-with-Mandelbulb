@@ -2,7 +2,7 @@ import multiprocessing as mp
 import matplotlib.pyplot as plt
 import matplotlib.colors as pltcolors
 import numpy as np
-import os
+import os, shutil
 from pylab import cm
 
 def plot_density(iteration, datafolder, distance_file, light_file):
@@ -43,6 +43,19 @@ def plot_density(iteration, datafolder, distance_file, light_file):
 if __name__ == '__main__':
     plt.close('all')
     datafolder = './data/'
+
+    # Delete previous images
+    for filename_to_delete in os.listdir(datafolder):
+        file_path_to_delete = os.path.join(datafolder, filename_to_delete)
+        try:
+            if os.path.isfile(file_path_to_delete) or os.path.islink(file_path_to_delete):
+                os.unlink(file_path_to_delete)
+            elif os.path.isdir(file_path_to_delete):
+                shutil.rmtree(file_path_to_delete)
+        except Exception as e:
+            print('Failed to delete %s. Reason: %s' % (file_path_to_delete, e))
+    
+    # Get new data filepaths
     distance_filepaths  = sorted([filename for filename in os.listdir(datafolder) if filename.startswith("distance_")])
     light_filepaths = sorted([filename for filename in os.listdir(datafolder) if filename.startswith("light_")])
     distance_filepaths  = distance_filepaths[::3]
