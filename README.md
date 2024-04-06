@@ -1,7 +1,7 @@
 # C++ & Python Mandelbulb generation and rendering
 
 ## Author: [Najib El khadir](https://github.com/NajibXY)
-## French Version
+## French Version [README-fr](https://github.com/NajibXY/Mandelbulb-with-Ray-marching/blob/master/README-fr.md)
 
 ## 1. Motivations
 
