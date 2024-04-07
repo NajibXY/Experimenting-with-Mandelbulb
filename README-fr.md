@@ -34,7 +34,7 @@ Afin de m'exercer et d'en apprendre davantage sur les mathématiques derrière l
 
 - Les points de données du Mandelbulb sont assez faciles à générer.
 - Mais pour pouvoir afficher ces données, une méthode de ray marching a été implémentée, qui implique le calcul des lumières et des distances selon le mouvement d'une caméra virtuelle. Cela nécessite de faire de la parallélisation avec OpenMP et beaucoup d'algèbre vectorielle tridimensionnelle pour obtenir un temps d'exécution acceptable.
-- Il faut environ 30 minutes pour générer les données avec un exposant de base égal à 8.
+- Il faut environ 30 minutes pour générer les données avec un exposant de base égal à 7.
 
 ### Compilation du fichier generate_data.cpp
 

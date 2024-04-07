@@ -35,7 +35,7 @@ As an exercise to learn more about the maths behind generating and rendering fra
 
 - The data points of the mandelbulb are pretty easy to generate.
 - But in order to be able to render the data, a ray marching method has been implemented, that involves lights and distances calculation according to the movement of a virtual camera. This requires to do some parallelization with OpenMP and a lot of three-dimensional vector algebra to achieve an acceptable execution time.
-- It takes about 30 minutes to generate the data with a base exponent equal to 8.
+- It takes about 30 minutes to generate the data with a base exponent equal to 7.
 
 ### Compiling the generate_data.cpp file
 
