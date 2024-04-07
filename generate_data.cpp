@@ -13,8 +13,8 @@
     Constants, properties and variables
 ---------------------------------------- */
 // Mandelbulb props
-#define MAIN_ITERATIONS 500
-double POWER_VAL = 8.0;
+#define MAIN_ITERATIONS 200
+double POWER_VAL = 7.0;
 // Screen props
 #define SCREEN_RESOLUTION 1000
 #define SCREEN_WIDTH  SCREEN_RESOLUTION
@@ -28,8 +28,8 @@ double POWER_VAL = 8.0;
 #define MAX_STEPS 100
 #define MAX_DISTANCE  5.0
 // Camera props
-double CAM_HORIZONTAL_ANGLE  = deg_2_rad(25.0);
-double CAM_VERTICAL_ANGLE  = deg_2_rad(-15.0);
+double CAM_HORIZONTAL_ANGLE  = deg_2_rad(-30.0);
+double CAM_VERTICAL_ANGLE  = deg_2_rad(10.0);
 double CAM_FOV      = deg_2_rad(45);
 double CAM_POSITION[3]   = {0.0, 0.0, 2.5}; 
 double LIGHT_POSITION[3] = {2.0, 0.0, 5.0};
