@@ -5,7 +5,7 @@
 ## 1. Motivations
 
 <figure text-align="right">
-  <img align="right" src="https://github.com/NajibXY/Mandelbulb-with-Ray-marching/blob/master/assets/mandelbulb.gif" width="400">
+  
 </figure>
 
 Qui n'est pas fan des fractales ? </br>
