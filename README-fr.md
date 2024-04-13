@@ -1,4 +1,4 @@
-# Génération et rendu d'un Mandelbulb en C++ et Python
+# Génération et rendu en ray marching d'un Mandelbulb en C++ et Python
 
 ## Auteur: [Najib El khadir](https://github.com/NajibXY)
 
