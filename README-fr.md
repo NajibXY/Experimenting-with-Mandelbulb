@@ -20,7 +20,7 @@ Afin de m'exercer et d'en apprendre davantage sur les mathématiques derrière l
 </br>
 
 ## 2. Technologies Utilisées
-
+![](https://skillicons.dev/icons?i=cpp,python)
 - C++14, OpenMP
 - Python, Numpy, Matplotlib, FFMPEG, Conda (pour mon environnement personnel)
 
@@ -29,6 +29,7 @@ Afin de m'exercer et d'en apprendre davantage sur les mathématiques derrière l
 - [Fractales 3D estimées par distance](http://blog.hvidtfeldts.net/index.php/2011/06/distance-estimated-3d-fractals-part-i/)
 - [Compréhension de la matrice de vue](https://www.3dgep.com/understanding-the-view-matrix/)
 - [Défi Mandelbulb de The Coding Train](https://www.youtube.com/watch?v=NJCiUVGiNyA&ab_channel=TheCodingTrain)
+- Projet adapté à partir des travaux d'AstroKriel https://github.com/AstroKriel/Mandelbulb
 
 ## 4. Génération de données
 
