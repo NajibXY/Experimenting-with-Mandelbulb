@@ -21,7 +21,7 @@ As an exercise to learn more about the maths behind generating and rendering fra
 </br>
 
 ## 2. Technologies Used
-
+![](https://skillicons.dev/icons?i=cpp,python)
 - C++14, OpenMP
 - Python, Numpy, Matplotlib, FFMPEG, Conda (for my personal environment)
 
@@ -30,6 +30,7 @@ As an exercise to learn more about the maths behind generating and rendering fra
 - [Distance Estimated 3D Fractals](http://blog.hvidtfeldts.net/index.php/2011/06/distance-estimated-3d-fractals-part-i/)
 - [Understanding the View Matrix](https://www.3dgep.com/understanding-the-view-matrix/)
 - [The Coding train's Mandelbulb Challenge](https://www.youtube.com/watch?v=NJCiUVGiNyA&ab_channel=TheCodingTrain)
+- This work was an attempt at improving AstroKriel work's at https://github.com/AstroKriel/Mandelbulb
 
 ## 4. Data generation
 
